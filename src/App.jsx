@@ -6,12 +6,12 @@ import { BodyApp } from "./appstyled";
 
 const App = () => {
   return (
-    
+    <BodyApp>
       <Router>
-        <Home />
+        {/* <Home /> */}
         <AllRoutes />
       </Router>
-  
+    </BodyApp>
   );
 };
 

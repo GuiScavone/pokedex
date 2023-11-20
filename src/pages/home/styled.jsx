@@ -29,7 +29,8 @@ align-items: center;
 export const ButtonContainer = styled.div`
   margin-top: 20px;
   display: flex;
-  gap: 10px;
+  gap: 25px;
+  
 `;
 
 export const ButtonPage = styled.button`

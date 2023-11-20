@@ -9,6 +9,7 @@ const AllRoutes = () => {
   return (
     <div>
       <Routes>
+      {/* <Route path="/" element={<Home />} /> */}
         <Route path="/home" element={<Home />} />
         <Route path="/gen1" element={<Gen1 />} />
         <Route path="/gen2" element={<Gen2 />} />

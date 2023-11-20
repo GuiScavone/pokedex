@@ -6,4 +6,11 @@ A ideia inicial do peojeto, foi criar uma pagina, com 3 botões, onde ao clicar 
 
 <img width="885" alt="Captura de ecrã 2023-11-20, às 18 58 25" src="https://github.com/GuiScavone/pokedex/assets/79471210/a62b9601-45fb-4228-bdbb-65b3de929038">
 
-<h2>desenvolvimento</h2>
+<h2>Desenvolvimento</h2>
+<p>Para execução do projeto tinhamos 3 semanas, tentei as dividir de forma a organizar e me gerenciar para tudo estar pronto no prazo!</p>
+  1 semana 
+<p>[x] - Design (Pesquisa, ideias, desenhos, Figma).</p>
+  2 semana
+<p>[ ] - Desenvolvimento do código, design das paginas.</p>
+  3 semana
+<p>[ ] - Finalização do código, verificação de erros, detalhes do design.</p>

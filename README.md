@@ -1,8 +1,9 @@
-# React + Vite
+<h1>Pokedex</h1>
+Este projeto foi desenvolvido durante o Bootcamp de Frontend da Mindera em 2023. A ideia é criar uma página, usando a API do Pokemon
+This project was developed during the 2023 Mindera Frontend Bootcamp. The goal is to create a page using the Pokemon API.
+<h2>Ideias e Projeto </h2>
+A ideia inicial do peojeto, foi criar uma pagina, com 3 botões, onde ao clicar seria redirecionado para uma nova página onde sera exibidas as informações de cada geração de Pokemons. Cada pagina exibira os pokemons de sua geração, ao clicar ira abrir um modal onde ira ser apresentada mais informações. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img width="885" alt="Captura de ecrã 2023-11-20, às 18 58 25" src="https://github.com/GuiScavone/pokedex/assets/79471210/a62b9601-45fb-4228-bdbb-65b3de929038">
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h2>desenvolvimento</h2>

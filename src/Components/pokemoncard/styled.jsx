@@ -1,21 +1,29 @@
 import styled from 'styled-components';
 
+export const GridContainer = styled.div`
+ display: grid;
+ grid-template-columns: repeat(4, 3fr);
+ gap: 10px;
+ padding: 50px;
+`;
+
 export const Card = styled.div`
-  display: flex;
+  display: grid;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  width: 260px;
+  width: 200px;
+  height: 200px;
   padding: 20px 1px;
   margin: 10px 0;
   text-align: center;
   position: relative;
-  cursor: pointer;
   box-shadow: 0 10px 15px -3px rgba(33, 150, 243, 0.4), 0 4px 6px -4px rgba(33, 150, 243, 0.4);
   border-radius: 10px;
   background-color: #6B6ECC;
   background: linear-gradient(180deg, rgba(153, 83, 195, 0.50) 0%, #3DA33A 100%)
 `;
+
 
 export const Content = styled.div`
   padding: 20px;
@@ -39,7 +47,7 @@ export const Title = styled.div`
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.64);
   margin-top: 10px;
-  font-size: 25px;
+  font-size: 10px;
   letter-spacing: 1px;
 `;
 
@@ -58,5 +66,14 @@ export const Button = styled.button`
   border-radius: 0.5rem;
   width: 90%;
   text-shadow: 0px 4px 18px #2c3442;
+  cursor: pointer;
+`;
+
+export const PokeImg = styled.img `
+align-items: center;
+  width: 159px;
+  height: 258px;
+  max-width: 100%;
+  margin-top: 20px;
 `;
 

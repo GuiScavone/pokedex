@@ -1,15 +1,16 @@
 import React, { Children } from "react";
 import { ModalContainer, ModalCard, ModalFooter } from "./styled";
 
-const Modal = ({ isOpen, setModalOpen, children }) => {
+const Modal = ({ isOpen, setModalOpen, children, pokeinfo }) => {
   if (isOpen) {
     return (
       <ModalContainer>
         <ModalCard>
-          {children}
           <div>
-            <ModalFooter onClick={setModalOpen}>Fechar</ModalFooter>
+            <ModalFooter onClick={setModalOpen}>X</ModalFooter>
+            <h1>{pokeinfo.name}</h1>
           </div>
+          {children}
         </ModalCard>
       </ModalContainer>
     );

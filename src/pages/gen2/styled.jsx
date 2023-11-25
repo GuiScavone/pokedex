@@ -1,11 +1,8 @@
-import React from 'react'
+import styled from "styled-components";
 
-const Gen1 = () => {
-  return (
-    <div>
-      Gen 1
-    </div>
-  )
-}
-
-export default Gen1;
+export const Logo = styled.img`
+  max-width: 250px;
+  margin-top: 20px;
+  flex-direction: column;
+  align-items: center;
+`;

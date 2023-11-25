@@ -145,7 +145,7 @@ const PokemonCard = () => {
           return {
             name: details.name,
             types: details.types.map((type) => type.type.name),
-            image: details.sprites.other["official-artwork"].front_default,
+            image: details.sprites.front_default, //details.sprites.other["official-artwork"].front_default
           };
         })
       );

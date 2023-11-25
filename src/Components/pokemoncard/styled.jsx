@@ -86,7 +86,7 @@ import styled from 'styled-components';
 
 export const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 10px;
   padding: 50px;
 `;
@@ -140,7 +140,7 @@ export const Button = styled.button`
   user-select: none;
   border: none;
   outline: none;
-  color: rgb(255 255 255);
+  color: rgb(255 255 255); 
   text-transform: uppercase;
   font-weight: 700;
   font-size: 0.75rem;

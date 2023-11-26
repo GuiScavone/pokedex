@@ -25,3 +25,20 @@ export const ModalCard = styled.div `
 export const ModalFooter = styled.div `
     cursor: pointer;
 `;
+
+export const Img = styled.img`
+  width: 37%;
+  position: relative;
+  display: row;
+  left: 33%;
+  @media (max-width: 868px) {
+    width: 100%;
+    left: 3%;
+  }
+  @media (min-width: 899px) and (max-width: 2000px) {
+    width: 37%;
+    position: relative;
+    display: row;
+    left: 23%;
+  }
+`;

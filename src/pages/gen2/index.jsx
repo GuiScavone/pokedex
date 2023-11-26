@@ -6,6 +6,8 @@ import Searchbar from "../../Components/searchbar";
 import { getPokemonData, getPokemons, searchPokemon } from "../../utils/api";
 import Pokedex from "../../Components/pokedex";
 import { PokemonGeneration } from "../../utils/generation";
+import sad from "../../assets/sad.gif";
+
 
 
 const Gen2 = () => {
@@ -72,7 +74,9 @@ const Gen2 = () => {
       </header>
       <Searchbar onSearch={onSerchHandler} />
       {notFound ? (
-        <div className="not-found-text">meteu essa?!</div>
+        <div>
+        <img src={sad} alt="pikachu sad" />
+      </div>
           ) : (
       <Pokedex
         pokemons={pokemons}

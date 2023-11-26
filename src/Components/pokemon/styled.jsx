@@ -24,7 +24,6 @@
 // // //   background: linear-gradient(180deg, rgba(153, 83, 195, 0.50) 0%, #3DA33A 100%)
 // // // `;
 
-
 // // // export const Content = styled.div`
 // // //   padding: 20px;
 // // // `;
@@ -75,12 +74,6 @@
 // // //   height: 85;
 // // //   max-width: 100%;
 // // // `;
-
-
-
-
-
-
 
 // import styled from 'styled-components';
 
@@ -153,9 +146,9 @@
 // `;
 
 // export const PokeImg = styled.img`
-//   width: 100%; 
+//   width: 100%;
 //   height: auto;
-//   border-radius: 50%; 
+//   border-radius: 50%;
 //   margin-top: 10px;
 // `;
 
@@ -166,12 +159,11 @@
 //   margin: 0 5px;
 // `;
 
-
 import styled from "styled-components";
-
+import typecolors from "../typecolors";
 
 export const PokemonCardContainer = styled.div`
- border: 1px solid #ccc;
+  border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
   width: 250px; /* Adjusted to take full width within the grid */
@@ -182,7 +174,6 @@ export const PokemonImageContainer = styled.div`
   text-align: center;
   padding: 16px;
   background-color: #f0f0f0;
-  
 `;
 
 export const PokemonImage = styled.img`
@@ -222,18 +213,18 @@ export const PokemonType = styled.div`
   flex-wrap: wrap;
 `;
 
+export const TypeImage = styled.div`
+  background-image: url(${(props) => props.image});
+  background-repeat: no-repeat;
+  background-size: cover;
+`;
+
 export const PokemonTypeText = styled.div`
-  background-color: #e0e0e0;
+  background: ${(props) => typecolors[props.type]};
   border-radius: 4px;
   padding: 4px 8px;
   margin: 4px;
-`;
-
-export const PokemonHeartButton = styled.button`
-  background-color: transparent;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
+  color: #fff;
 `;
 
 export const Button = styled.button`
@@ -242,7 +233,7 @@ export const Button = styled.button`
   user-select: none;
   border: none;
   outline: none;
-  color: rgb(255 255 255); 
+  color: rgb(255 255 255);
   text-transform: uppercase;
   font-weight: 700;
   font-size: 0.75rem;

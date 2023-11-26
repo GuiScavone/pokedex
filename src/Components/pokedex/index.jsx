@@ -2,6 +2,7 @@ import React from "react";
 import Pagination from "../pagination";
 import Pokemon from "../pokemon";
 import { PokeGrid } from "./styled";
+import Loading from "../../assets/pikachu-running.gif";
 
 const Pokedex = (props) => {
   const { pokemons, loading, page, setPage, totalPages } = props;
@@ -28,7 +29,9 @@ return (
         />
       </div>
       {loading ? (
-        <div>Carregando, segura fera...</div>
+        <div>
+            <img src={Loading} alt="pikachu running"/>
+        </div>
       ) : (
         <PokeGrid>
           {pokemons &&

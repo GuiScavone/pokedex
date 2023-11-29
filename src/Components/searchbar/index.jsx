@@ -7,7 +7,7 @@ import {
 } from "./styled";
 
 const Searchbar = (props) => {
-  const [search, setSearch] = useState();
+  const [search, setSearch] = useState("");
   const { onSearch } = props
 
   const onChangeHandler = (e) => {

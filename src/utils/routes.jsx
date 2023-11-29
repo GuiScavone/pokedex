@@ -10,7 +10,7 @@ const AllRoutes = () => {
     <div>
       <Routes>
       {/* <Route path="/" element={<Home />} /> */}
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/gen1" element={<Gen1 />} />
         <Route path="/gen2" element={<Gen2 />} />
         <Route path="/gen3" element={<Gen3 />} />

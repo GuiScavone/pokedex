@@ -25,7 +25,7 @@ const Home = () => {
       <ButtonContainer>
         <div>
           <div>
-          <ImgGen src={imgGen1} alt="AshCation" />
+          <ImgGen src={imgGen1} alt="Pokemons generarion 1" />
           </div>
           <Link to="/gen1">
             <ButtonPage>Generation 1</ButtonPage>
@@ -33,7 +33,7 @@ const Home = () => {
         </div>
         <div>
           <div>
-          <ImgGen src={imgGen2} alt="AshCation" />
+          <ImgGen src={imgGen2} alt="Pokemons generarion 2" />
           </div>
           <Link to="/gen2">
             <ButtonPage>Generation 2</ButtonPage>
@@ -41,7 +41,7 @@ const Home = () => {
         </div>
         <div>
           <div>
-          <ImgGen src={imgGen3} alt="AshCation" />
+          <ImgGen src={imgGen3} alt="Pokemons generarion 2" />
           </div>
           <Link to="/gen3">
             <ButtonPage>Generation 3</ButtonPage>

@@ -51,7 +51,7 @@ const Pokemon = (props) => {
       <CardBody gradientColors={gradientColors}>
         <CardTop>
           <PokemonName>{pokemon.name}</PokemonName>
-          {/* <PokemonId>#{pokemon.id}</PokemonId> */}
+          <PokemonId>#{pokemon.id}</PokemonId>
         </CardTop>
 
         <CardBottom>

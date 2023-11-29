@@ -26,7 +26,7 @@ const Gen1 = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // Adiciona uma animação suave
+      behavior: "smooth",
     });
   };
 
@@ -83,7 +83,7 @@ const Gen1 = () => {
   return (
     <Gen1Container>
       <HeaderGen1>
-        <Link to="/home">
+        <Link to="/">
           <Logo src={logo} alt="Logo Pokemon" />
         </Link>
       </HeaderGen1>
@@ -102,19 +102,19 @@ const Gen1 = () => {
         />
       )}
       <BackHome>
-        <Link to="/home">
+        <Link to="/">
           <button>
             <img src={backball} alt="BackHome" />
             <p>Back Home</p>
           </button>
         </Link>
-      
-      <ScrollToTopButton onClick={scrollToTop}>
-        <button>
-          <img src={backball} alt="Back Top Page" />
-          <p>Back Top Page</p>
-        </button>
-      </ScrollToTopButton>
+
+        <ScrollToTopButton onClick={scrollToTop}>
+          <button>
+            <img src={backball} alt="Back Top Page" />
+            <p>Back Top Page</p>
+          </button>
+        </ScrollToTopButton>
       </BackHome>
     </Gen1Container>
   );

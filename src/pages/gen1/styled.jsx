@@ -3,7 +3,7 @@ import backverde from "../../assets/backgroundVerde.png";
 
 export const Gen1Container = styled.div`
   background-image: url(${backverde});
-  background-size: cover; // ou experimente 'contain' dependendo do efeito desejado
+  background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
 `;

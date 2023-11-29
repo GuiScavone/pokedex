@@ -12,7 +12,6 @@ const PokemonDetails = (props) => {
       <PokemonImage
         alt={pokemon.name}
         src={pokemon.sprites.front_default}
-        className="pokemon-image"
       />
       <h1>
         {pokemon.name} #{pokemon.id}

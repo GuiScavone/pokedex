@@ -67,7 +67,7 @@ const Gen3 = () => {
   return (
     <>
       <header>
-        <Link to="/home">
+        <Link to="/">
           <Logo src={logo} alt="Logo Pokemon" />
         </Link>
       </header>
@@ -84,7 +84,7 @@ const Gen3 = () => {
         setPage={setPage}
         totalPages={totalpages}
       />)}
-      <Link to="/home">
+      <Link to="/">
         <button>Voltar para a Home</button>
       </Link>
     </>

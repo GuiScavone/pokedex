@@ -1,167 +1,156 @@
-// import styled from 'styled-components';
+import styled from "styled-components";
+import typecolors from "../typecolors";
+import poketr from "../../assets/pokeballtrans.png";
 
-// // export const GridContainer = styled.div`
-// //  display: grid;
-// //  grid-template-columns: repeat(4, 3fr);
-// //  gap: 10px;
-// //  padding: 50px;
-// // `;
+export const PokemonCardContainer = styled.div`
+  padding-top: 50px;
+  border-radius: 8px;
+  width: 250px;
+  height: 350px;
+  align-items: flex-end;
+`;
 
-// // export const Card = styled.div`
-// //   display: grid;
-// //   flex-direction: column;
-// //   align-items: center;
-// //   justify-content: space-around;
-// //   width: 200px;
-// //   height: 200px;
-// //   padding: 20px 1px;
-// //   margin: 10px 0;
-// //   text-align: center;
-// //   position: relative;
-// //   box-shadow: 0 10px 15px -3px rgba(33, 150, 243, 0.4), 0 4px 6px -4px rgba(33, 150, 243, 0.4);
-// //   border-radius: 10px;
-// //   background-color: #6B6ECC;
-// //   background: linear-gradient(180deg, rgba(153, 83, 195, 0.50) 0%, #3DA33A 100%)
-// // `;
+export const PokemonImage = styled.img`
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: absolute;
+  top: -5rem;
+  left: 50%;
+  width: 75%;
+  transform: translateX(-50%);
+  filter: saturate(1.2);
+  img {
+    z-index: 100000;
+  }
+`;
 
+export const PokemonImageContainer = styled.div`
+  /* opacity: 75%; */
+  text-align: center;
+  padding: 16px;
+  position: relative;
+`;
 
-// // export const Content = styled.div`
-// //   padding: 20px;
-// // `;
+export const CardBody = styled.div`
+  border-radius: 30px;
+  padding: 10px;
+  color: white;
+  height: 300px;
+  background: linear-gradient(
+    to top,
+    ${(props) => props.gradientColors[0]} 0%,
+    ${(props) => props.gradientColors[1]} 100%
+  );
+`;
 
-// // export const Price = styled.div`
-// //   color: white;
-// //   font-weight: 800;
-// //   font-size: 50px;
-// //   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
-// // `;
+export const CardTop = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 10px;
+`;
 
-// // export const Description = styled.div`
-// //   color: rgba(255, 255, 255, 0.6);
-// //   margin-top: 10px;
-// //   font-size: 14px;
-// // `;
+export const PokemonName = styled.h3`
+  font-size: 1.2rem;
+  margin: 0;
+  text-transform: capitalize;
+`;
 
-// // export const Title = styled.div`
-// //   font-weight: 800;
-// //   text-transform: uppercase;
-// //   color: rgba(255, 255, 255, 0.64);
-// //   margin-top: 10px;
-// //   font-size: 10px;
-// //   letter-spacing: 1px;
-// // `;
+export const PokemonId = styled.div`
+  font-size: 1rem;
+  color: #ffffff;
+`;
 
-// // export const Button = styled.button`
-// //   -webkit-user-select: none;
-// //   -moz-user-select: none;
-// //   user-select: none;
-// //   border: none;
-// //   outline: none;
-// //   color: rgb(255 255 255);
-// //   text-transform: uppercase;
-// //   font-weight: 700;
-// //   font-size: 0.75rem;
-// //   padding: 0.75rem 1.5rem;
-// //   background-color: rgb(33 150 243);
-// //   border-radius: 0.5rem;
-// //   width: 90%;
-// //   text-shadow: 0px 4px 18px #2c3442;
-// //   cursor: pointer;
-// // `;
+export const CardBottom = styled.div`
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+`;
 
-// // export const PokeImg = styled.img `
-// // align-items: center;
-// //   width: 86;
-// //   height: 85;
-// //   max-width: 100%;
-// // `;
+export const PokemonType = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
+export const TypeImage = styled.div`
+display: flex;
+justify-items: center;
+  background-image: url(${(props) => props.image});
+  width: 30px;
+  height: 12px;
+  margin-right: 4px;
+  
+`;
 
+export const PokemonTypeText = styled.div`
+  display: flex;
+  justify-content: center;
+  background: ${(props) => typecolors[props.type]};
+  border-radius: 30px;
+  padding: 4px 8px;
+  margin: 8px;
+  color: #fff;
+  font-weight: bold;
+  `;
 
+export const CardAbout = styled.div`
+  border-radius: 30px;
+  padding: 4px 8px;
+  margin: 4px;
+  color: #fff;
+  align-content: center;
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+`;
 
+export const StatContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px 10px;
+`;
 
+export const Label = styled.span`
+  font-size: 1rem;
+  color: #ffffff;
+  margin-right: 5px;
+  font-weight: bold;
+`;
 
+export const ValueBox = styled.span`
+  background-color: #ffffff; // Cor de fundo para a caixa de valor
+  color: #959595;
+  padding: 5px;
+  border-radius: 8px;
+`;
 
-// import styled from 'styled-components';
+export const Button = styled.button`
+  display: flex;
+  align-items: center;
+  padding: 12.5px 30px;
+  border: 0;
+  border-radius: 100px;
+  background-color: #d6dad6;
+  color: #7e7a7a;
+  font-weight: Bold;
 
-// export const GridContainer = styled.div`
-//   display: grid;
-//   grid-template-columns: repeat(5, 1fr);
-//   gap: 10px;
-//   padding: 50px;
-// `;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
 
-// export const Card = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: space-around;
-//   width: 200px;
-//   height: 300px; /* Aumentei a altura para acomodar a imagem e o conteúdo */
-//   padding: 20px 10px; /* Ajustei o padding */
-//   margin: 10px;
-//   text-align: center;
-//   position: relative;
-//   box-shadow: 0 10px 15px -3px rgba(33, 150, 243, 0.4), 0 4px 6px -4px rgba(33, 150, 243, 0.4);
-//   border-radius: 10px;
-//   background-color: #6B6ECC;
-//   background: linear-gradient(180deg, rgba(153, 83, 195, 0.50) 0%, #3DA33A 100%);
-// `;
+  &:hover {
+    background-color: #d6dad6;
+    box-shadow: 0 0 20px #7e7a7a;
+    transform: scale(1.1);
+  }
 
-// export const Content = styled.div`
-//   padding: 20px;
-// `;
-
-// export const Price = styled.div`
-//   color: white;
-//   font-weight: 800;
-//   font-size: 20px; /* Ajustei o tamanho da fonte */
-//   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.42);
-// `;
-
-// export const Description = styled.div`
-//   color: rgba(255, 255, 255, 0.6);
-//   margin-top: 10px;
-//   font-size: 14px;
-// `;
-
-// export const Title = styled.div`
-//   font-weight: 800;
-//   text-transform: uppercase;
-//   color: rgba(255, 255, 255, 0.64);
-//   margin-top: 10px;
-//   font-size: 16px; /* Ajustei o tamanho da fonte */
-//   letter-spacing: 1px;
-// `;
-
-// export const Button = styled.button`
-//   -webkit-user-select: none;
-//   -moz-user-select: none;
-//   user-select: none;
-//   border: none;
-//   outline: none;
-//   color: rgb(255 255 255); 
-//   text-transform: uppercase;
-//   font-weight: 700;
-//   font-size: 0.75rem;
-//   padding: 0.75rem 1.5rem;
-//   background-color: rgb(33 150 243);
-//   border-radius: 0.5rem;
-//   width: 90%;
-//   text-shadow: 0px 4px 18px #2c3442;
-//   cursor: pointer;
-// `;
-
-// export const PokeImg = styled.img`
-//   width: 100%; 
-//   height: auto;
-//   border-radius: 50%; 
-//   margin-top: 10px;
-// `;
-
-// export const Typebox = styled.div`
-//   color: white;
-//   padding: 5px;
-//   border-radius: 5px;
-//   margin: 0 5px;
-// `;
+  &:active {
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
+  }
+`;

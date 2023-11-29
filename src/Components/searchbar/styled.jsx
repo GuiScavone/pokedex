@@ -4,6 +4,8 @@ export const SearchBarContainer = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  width: 50%;
+  margin: auto;
 `;
 
 export const SearchBar = styled.div`

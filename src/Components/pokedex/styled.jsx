@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const PokeGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
   padding: 50px;
 `;
+

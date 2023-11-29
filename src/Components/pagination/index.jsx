@@ -1,15 +1,21 @@
 import React from "react";
-import { PaginationStyled } from "./styled";
+import { PaginationStyled, ArrowButton } from "./styled";
 
 const Pagination = (props) => {
-    const {page, totalPages, onLeftClick, onRightClick} = props
-    return (
-        <PaginationStyled>
-            <button onClick={onLeftClick}><div>◀️</div></button>
-            <div>{page} de {totalPages}</div>
-            <button onClick={onRightClick}><div>▶️</div></button>
-        </PaginationStyled>
-    )
-}
+  const { page, totalPages, onLeftClick, onRightClick } = props;
+  return (
+    <PaginationStyled>
+      <ArrowButton onClick={onLeftClick} className="button-paginate">
+        -
+      </ArrowButton>
+      <div>
+        {page} de {totalPages}
+      </div>
+      <ArrowButton onClick={onRightClick} className="button-paginate">
+        +
+      </ArrowButton>
+    </PaginationStyled>
+  );
+};
 
 export default Pagination;

@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import { Logo } from "./styled";
+import {
+  Logo,
+  Gen1Container,
+  BackHome,
+  HeaderGen1,
+  ScrollToTopButton,
+} from "./styled";
 import Searchbar from "../../Components/searchbar";
 import { getPokemonData, getPokemons, searchPokemon } from "../../utils/api";
 import Pokedex from "../../Components/pokedex";
 import { PokemonGeneration } from "../../utils/generation";
 import sad from "../../assets/sad.gif";
+import backball from "../../assets/pokeball.png";
 
 const Gen1 = () => {
   const [searchedPokemon, setSearchedPokemon] = useState(null);
@@ -16,12 +23,19 @@ const Gen1 = () => {
   const [totalpages, setTotalPages] = useState(0);
   const [notFound, setNotFound] = useState(false);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   const handleSearch = async (pokemonName) => {
     const result = await searchPokemon(pokemonName);
     setSearchedPokemon(result);
   };
 
-  const itensPerPage = 15;
+  const itensPerPage = 16;
   const fetchPokemons = async () => {
     try {
       setLoading(true);
@@ -67,12 +81,12 @@ const Gen1 = () => {
   };
 
   return (
-    <>
-      <header>
-        <Link to="/home">
+    <Gen1Container>
+      <HeaderGen1>
+        <Link to="/">
           <Logo src={logo} alt="Logo Pokemon" />
         </Link>
-      </header>
+      </HeaderGen1>
       <Searchbar onSearch={onSerchHandler} />
       {notFound ? (
         <div>
@@ -87,10 +101,22 @@ const Gen1 = () => {
           totalPages={totalpages}
         />
       )}
-      <Link to="/home">
-        <button>Voltar para a Home</button>
-      </Link>
-    </>
+      <BackHome>
+        <Link to="/">
+          <button>
+            <img src={backball} alt="BackHome" />
+            <p>Back Home</p>
+          </button>
+        </Link>
+
+        <ScrollToTopButton onClick={scrollToTop}>
+          <button>
+            <img src={backball} alt="Back Top Page" />
+            <p>Back Top Page</p>
+          </button>
+        </ScrollToTopButton>
+      </BackHome>
+    </Gen1Container>
   );
 };
 

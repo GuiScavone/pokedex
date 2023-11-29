@@ -6,10 +6,10 @@ function ProgressBar({ title, width, text }) {
   return (
     <ProgressBarStyled>
       <H3>{title}</H3>
-      <div className="progress">
+      <div>
         <span style={{ width: num }}></span>
       </div>
-      <H3 className="progress-bar">{text}</H3>
+      <H3>{text}</H3>
     </ProgressBarStyled>
   );
 }

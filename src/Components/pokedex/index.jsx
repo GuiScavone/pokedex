@@ -1,6 +1,6 @@
 import React from "react";
 import Pagination from "../pagination";
-import Pokemon from "../pokemon";
+import Pokemon from "../pokemoncard";
 import { PokeGrid } from "./styled";
 import Loading from "../../assets/pikachu-running.gif";
 
@@ -21,12 +21,7 @@ const Pokedex = (props) => {
 return (
     <div>
       <div className="pokedex-header">
-        <Pagination
-          page={page + 1}
-          totalPages={totalPages}
-          onLeftClick={onLeftClickHandler}
-          onRightClick={onRightClickHandler}
-        />
+
       </div>
       {loading ? (
         <div>
@@ -40,6 +35,12 @@ return (
             })}
         </PokeGrid>
       )}
+        <Pagination
+          page={page + 1}
+          totalPages={totalPages}
+          onLeftClick={onLeftClickHandler}
+          onRightClick={onRightClickHandler}
+        />
     </div>
   );
 };

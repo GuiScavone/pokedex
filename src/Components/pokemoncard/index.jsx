@@ -1,94 +1,88 @@
-// import React, { useEffect, useState } from "react";
-// import {
-//   Card,
-//   Content,
-//   Description,
-//   Title,
-//   Button,
-//   GridContainer,
-//   PokeImg,
-//   Typebox,
-// } from "./styled";
-// import Modal from "../modal";
-// import axios from "axios";
+import React, { useContext, useState } from "react";
+import {
+  PokemonCardContainer,
+  PokemonImageContainer,
+  PokemonImage,
+  CardBody,
+  CardTop,
+  PokemonName,
+  PokemonId,
+  CardBottom,
+  PokemonType,
+  PokemonTypeText,
+  Button,
+  TypeImage,
+  CardAbout,
+  StatContainer,
+  Label,
+  ValueBox,
+} from "./styled";
+import Modal from "../modal";
+import PokemonDetails from "../pokemonsdetails";
+import typecolors from "../typecolors";
+import getTypeInfo from "../../utils/typecolors";
 
-// const PokemonCard = () => {
-//   const [openModal, setOpenModal] = useState(false);
-//   const [pokeinfo, setPokeInfo] = useState([]);
-//   const [selectedPokemon, setSelectedPokemon] = useState(null);
+const generateGradientColors = (types) => {
+  const color1 = typecolors[types[0]] || "rgba(0, 0, 0, 0.75)";
+  const color2 = typecolors[types[1]] || "rgba(0, 0, 0, 0.75)";
+  return [color1, color2];
+};
 
-//   useEffect(() => {
-//     getPokemons();
-//   }, []);
+const convertHeightToMeters = (height) => {
+  return (height / 10).toFixed(1);
+};
 
-//   const getPokemons = async () => {
-//     try {
-//       const response = await axios.get(
-//         "https://pokeapi.co/api/v2/pokemon?limit=151"
-//       );
-//       const pokemonResults = response.data.results;
+const convertWeightToKilograms = (weight) => {
+  return (weight / 10).toFixed(1);
+};
 
-//       const pokemonDetails = await Promise.all(
-//         pokemonResults.map(async (pokemon) => {
-//           const detailsResponse = await axios.get(
-//             `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
-//           );
-//           const details = detailsResponse.data;
+const Pokemon = (props) => {
+  const [openModal, setOpenModal] = useState(false);
+  const { pokemon } = props;
+  const gradientColors = generateGradientColors(
+    pokemon.types.map((type) => type.type.name)
+  );
 
-//           return {
-//             name: details.name,
-//             types: details.types.map((type) => type.type.name),
-//             image: details.sprites.front_default, //details.sprites.other["official-artwork"].front_default
-//           };
-//         })
-//       );
+  return (
+    <PokemonCardContainer>
+      <PokemonImageContainer>
+        <PokemonImage alt={pokemon.name} src={pokemon.sprites.front_default} />
+      </PokemonImageContainer>
+      <CardBody gradientColors={gradientColors}>
+        <CardTop>
+          <PokemonName>{pokemon.name}</PokemonName>
+          <PokemonId>#{pokemon.id}</PokemonId>
+        </CardTop>
 
-//       setPokeInfo(pokemonDetails);
-//     } catch (error) {
-//       console.error("Error fetching Pokemon data", error);
-//     }
-//   };
+        <CardBottom>
+          <PokemonType>
+            {pokemon.types.map((type, index) => (
+              <PokemonTypeText key={index} type={type.type.name}>
+                <TypeImage image={typecolors[type.type.name]} />
+                <Label>{type.type.name}</Label>
+              </PokemonTypeText>
+            ))}
+          </PokemonType>
+          <CardAbout>
+            <StatContainer>
+              <Label>Height</Label>
+              <ValueBox>{convertHeightToMeters(pokemon.height)} M</ValueBox>
+            </StatContainer>
+            <StatContainer>
+              <Label>Weight</Label>
+              <ValueBox>{convertWeightToKilograms(pokemon.weight)} KG</ValueBox>
+            </StatContainer>
+          </CardAbout>
+        </CardBottom>
 
-//   return (
-//     <GridContainer>
-//       {pokeinfo.length > 0 ? (
-//         pokeinfo.map((pokemon, index) => (
-//           <Card key={index}>
-//             <Content>
-//               <PokeImg src={pokemon.image} alt={pokemon.name} />
+        <Button onClick={() => setOpenModal(true)}>More Info</Button>
 
-//               <Title>{pokemon.name}</Title>
+        <Modal isOpen={openModal} setModalOpen={() => setOpenModal(false)}>
+          <PokemonDetails pokemon={pokemon} />
+        </Modal>
+      </CardBody>
+    </PokemonCardContainer>
+  );
+};
 
-//               <Description>
-//                 {pokemon.types && pokemon.types.length > 0 ? (
-//                   pokemon.types.map((type, typeIndex) => (
-//                     <Typebox key={typeIndex} type={type}>
-//                       {type}
-//                     </Typebox>
-//                   ))
-//                 ) : (
-//                   <span>No types available</span>
-//                 )}
-//               </Description>
-//             </Content>
-//             <Button
-//               onClick={() => {
-//                 setOpenModal(true);
-//                 setSelectedPokemon(pokemon);
-//               }}
-//             >
-//               More Info
-//             </Button>
-//           </Card>
-//         ))
-//       ) : (
-//         <p>Loading...</p>
-//       )}
-//       <Modal isOpen={openModal} setModalOpen={() => setOpenModal(false)}>
-//         Conteudo do Modal
-//       </Modal>
-//     </GridContainer>
-//   );
-// };
-
-// export default PokemonCard;
+export default Pokemon;

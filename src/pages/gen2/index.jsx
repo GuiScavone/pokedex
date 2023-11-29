@@ -23,7 +23,7 @@ const Gen2 = () => {
     setSearchedPokemon(result);
   };
 
-  const itensPerPage = 15;
+  const itensPerPage = 16;
   const fetchPokemons = async () => {
     try {
       setLoading(true);

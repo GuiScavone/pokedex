@@ -27,14 +27,14 @@ export const SadContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;  // Ajuste para alinhar ao topo
+  justify-content: flex-start;  
   height: 100vh;
-  margin-top: 50px;  // Ajuste conforme necessário
+  margin-top: 50px; 
 `;
 
 export const SadText = styled.div`
   margin-bottom: 20px;
-  text-align: center;  // Ajuste conforme necessário
+  text-align: center;
   color: white;
 `;
 

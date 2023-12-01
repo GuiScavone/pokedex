@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const PaginationStyled = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;  // Centraliza horizontalmente
+  justify-content: center; 
   margin-top: 20px;
   color: white;
 `;
@@ -70,7 +70,6 @@ export const ScrollToTopButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  /* padding: 50px 50px 50px 50px; */
 
   button {
     background: transparent;

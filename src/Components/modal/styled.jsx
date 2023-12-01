@@ -13,16 +13,16 @@ export const ModalContainer = styled.div`
   justify-content: center;
 
   @media (max-width: 868px) {
-    width: 80%; /* Alterado para 80% para se adaptar a telas menores */
-    height: 60%; /* Alterado para 60% para se adaptar a telas menores */
-    padding: 10px; /* Aumentado o espaço interno em telas menores */
+    width: 80%; 
+    height: 60%;
+    padding: 10px;
   }
 
   @media (min-width: 899px) and (max-width: 2000px) {
-    width: 40%; /* Alterado para 40% para se adaptar a telas médias */
-    height: 50%; /* Alterado para 50% para se adaptar a telas médias */
-    padding: 10px; /* Aumentado o espaço interno em telas médias */
-    margin-left: 30%; /* Ajustado o espaçamento à esquerda em telas médias */
+    width: 40%; 
+    height: 50%;
+    padding: 10px; 
+    margin-left: 30%;
   }
 `;
 

@@ -23,9 +23,9 @@ export const PokemonInfoContainer = styled.div`
   height: 400px;
 
   @media (max-width: 801px) {
-    width: 80%; /* Ajuste a largura máxima conforme necessário */
-    max-width: 400px; /* Adicionado um limite máximo de largura */
-    padding: 5px; /* Adicionado espaçamento interno */
+    width: 80%; 
+    max-width: 400px;
+    padding: 5px; 
   }
 `;
 
@@ -34,7 +34,7 @@ export const PokemonImage = styled.img`
   width: 250px;
 
   @media (max-width: 801px) {
-    max-height: 250px; /* Adicionado um limite máximo de altura */
-    max-width: 100%; /* Adicionado um limite máximo de largura */
+    max-height: 250px;
+    max-width: 100%; 
   }
 `;

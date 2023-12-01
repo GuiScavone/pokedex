@@ -3,8 +3,8 @@ import image from "../../assets/BackGroundHome.png";
 import backblack from "../../assets/backgroundblack.png";
 
 export const BoxColor1 = styled.div`
-  width: 213px; // Largura fixa
-  height: 350px; // Altura da página
+  width: 213px;
+  height: 350px;
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0) 0%,
@@ -14,13 +14,13 @@ export const BoxColor1 = styled.div`
   flex-shrink: 0;
 
   @media (max-width: 801px) {
-   background: none;
+    background: none;
   }
 `;
 
 export const BoxColor2 = styled.div`
-  width: 213px; // Largura fixa
-  height: 350px; // Altura da página
+  width: 213px;
+  height: 350px;
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0) 0%,
@@ -29,13 +29,13 @@ export const BoxColor2 = styled.div`
   );
 
   @media (max-width: 801px) {
-   background: none;
+    background: none;
   }
 `;
 
 export const BoxColor3 = styled.div`
-  width: 213px; // Largura fixa
-  height: 350px; // Altura da página
+  width: 213px;
+  height: 350px;
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0) 0%,
@@ -44,7 +44,7 @@ export const BoxColor3 = styled.div`
   );
 
   @media (max-width: 801px) {
-   background: none;
+    background: none;
   }
 `;
 
@@ -57,19 +57,20 @@ export const HomeContainer = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 20px; // Adicionei um espaçamento interno
+  padding: 20px;
 
   @media (max-width: 801px) {
     background-image: url(${backblack});
-    padding-top: 0; // Remova o espaçamento superior
-    /* justify-content: flex-start; // Alinhar o conteúdo ao topo em telas menores que 768px
-    padding-top: 20px; // Adicionar espaço superior para acomodar o ButtonContainer */
+    padding-top: 0;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
   }
 
   @media (max-width: 600px) {
     background-image: url(${backblack});
-    justify-content: flex-start; // Alinhar o conteúdo ao topo em telas menores que 768px
-    padding-top: 20px; // Adicionar espaço superior para acomodar o ButtonContainer
+    justify-content: flex-start;
+    padding-top: 20px;
   }
 `;
 
@@ -84,14 +85,12 @@ export const MainImage = styled.img`
   max-width: 100%;
   margin-top: 20px;
 
-  @media (max-width: 768px) {
-    /* Reduzir tamanho da imagem para tablets */
+  @media (max-width: 801px) {
     width: 100px;
     height: 150px;
   }
 
   @media (max-width: 480px) {
-    /* Reduzir ainda mais para telefones */
     width: 80px;
     height: 120px;
   }
@@ -102,8 +101,8 @@ export const ButtonContainer = styled.div`
   margin-top: 20px;
   display: flex;
   gap: 25px;
-  max-width: 650px; // Adicionado para definir uma largura máxima
-  width: 100%; //
+  max-width: 650px;
+  width: 100%;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -138,24 +137,17 @@ export const ButtonPage = styled.button`
 `;
 
 export const ImgGen = styled.img`
-  /* justify-content: space-around;
-  width: 210px;
-  height: 210px;
-  max-width: 100%;
-  margin-top: 20px; */
   width: 210px;
   height: 210px;
   max-width: 100%;
   margin-top: 50px;
 
-  @media (max-width: 768px) {
-    /* Reduzir tamanho da imagem para tablets */
+  @media (max-width: 801px) {
     width: 150px;
     height: 150px;
   }
 
   @media (max-width: 480px) {
-    /* Reduzir ainda mais para telefones */
     width: 100px;
     height: 100px;
   }

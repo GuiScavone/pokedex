@@ -8,7 +8,6 @@ const App = () => {
   return (
     <BodyApp>
       <Router>
-        {/* <Home /> */}
         <AllRoutes />
       </Router>
     </BodyApp>

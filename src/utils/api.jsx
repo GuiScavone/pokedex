@@ -18,21 +18,22 @@ export const getPokemons = async (generation, itensPerPage = 151, offset = 0) =>
         if (generation === "first") {
             start = 1;
             end = 151;
-            // if (offset + 16 > end ) {
-            //     itensPerPage = 5
-            // }
+            if (offset + itensPerPage > end ) {
+                itensPerPage = 7
+            }
             
         } else if (generation === "second") {
             start = 152;
             end = 251;
-            // if (offset > 16) {
-            //     itensPerPage = 4
-            // }
+            if (offset + itensPerPage > end ) {
+                itensPerPage = 5
+            }
         } else if (generation === "third") {
             start = 252;
             end = 386;
-        // }  if (offset > 16) {
-        //     itensPerPage = 8
+            if (offset + itensPerPage > end ) {
+                itensPerPage = 5
+            }
         }
 
         let url = `https://pokeapi.co/api/v2/pokemon?limit=${itensPerPage}&offset=${offset}`;

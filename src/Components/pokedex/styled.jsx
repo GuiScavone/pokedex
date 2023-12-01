@@ -8,9 +8,9 @@ export const PokeGrid = styled.div`
   padding: 50px;
 
   @media screen and (max-width: 768px) {
-    grid-template-columns: 1fr; /* Uma coluna para telas menores */
-    align-items: center; /* Centraliza os itens na vertical */
-    text-align: center; /* Centraliza os itens na horizontal */
+    grid-template-columns: 1fr; 
+    align-items: center;
+    text-align: center; 
   }
 `;
 

@@ -20,17 +20,19 @@ export const getPokemons = async (generation, itensPerPage = 151, offset = 0) =>
             start = 1;
             end = 151;
             if (offset + 16 > end) {
-                itensPerPage = 7
+                itensPerPage = 6
             }
         } else if (generation === "second") {
             start = 152;
             end = 251;
             if (offset + 16 > end) {
-                itensPerPage = 10
+                itensPerPage = 5
             }
         } else if (generation === "third") {
             start = 252;
             end = 386;
+        }  if (offset + 16 > end) {
+            itensPerPage = 8
         }
 
         let url = `https://pokeapi.co/api/v2/pokemon?limit=${itensPerPage}&offset=${offset}`;
@@ -49,7 +51,6 @@ export const getPokemons = async (generation, itensPerPage = 151, offset = 0) =>
         console.log("error: ", error);
     }
 };
-
 
 
 export const getPokemonData = async (url) => {

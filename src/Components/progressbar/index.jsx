@@ -1,15 +1,17 @@
+// ProgressBar.js
 import React from "react";
-import { ProgressBarStyled, H3 } from "./styled";
+import { ProgressBarStyled, H3, AnimatedProgressBar } from "./styled";
 
 function ProgressBar({ title, width, text }) {
   const num = width + "%";
+
   return (
     <ProgressBarStyled>
       <H3>{title}</H3>
-      <div>
-        <span style={{ width: num }}></span>
+      <div className="progress">
+        <AnimatedProgressBar style={{ width: num }} />
       </div>
-      <H3>{text}</H3>
+      <H3 className="progress-bar">{text}</H3>
     </ProgressBarStyled>
   );
 }

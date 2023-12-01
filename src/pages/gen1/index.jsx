@@ -4,18 +4,19 @@ import logo from "../../assets/logo.png";
 import {
   Logo,
   Gen1Container,
-  BackHome,
   HeaderGen1,
-  ScrollToTopButton,
+  SadContainer,
+  SadImg,
+  SadText
 } from "./styled";
 import Searchbar from "../../Components/searchbar";
 import { getPokemonData, getPokemons, searchPokemon } from "../../utils/api";
 import Pokedex from "../../Components/pokedex";
 import { PokemonGeneration } from "../../utils/generation";
 import sad from "../../assets/sad.gif";
-import backball from "../../assets/pokeball.png";
 
-const Gen1 = () => {
+const Gen1 = (props) => {
+  const { totalPages } = props;
   const [searchedPokemon, setSearchedPokemon] = useState(null);
   const [loading, setLoading] = useState(false);
   const [pokemons, setPokemons] = useState([]);
@@ -23,11 +24,15 @@ const Gen1 = () => {
   const [totalpages, setTotalPages] = useState(0);
   const [notFound, setNotFound] = useState(false);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+  const onLeftClickHandler = () => {
+    if (page > 0) {
+      setPage(page - 1);
+    }
+  };
+  const onRightClickHandler = () => {
+    if (page + 1 !== totalPages) {
+      setPage(page + 1);
+    }
   };
 
   const handleSearch = async (pokemonName) => {
@@ -70,7 +75,7 @@ const Gen1 = () => {
     setLoading(true);
     setNotFound(false);
     const result = await searchPokemon(pokemon);
-    if (!result || (result && result.id <= 1 && result.id >= 151)) {
+    if (!result) {
       setNotFound(true);
     } else {
       setPokemons([result]);
@@ -89,9 +94,11 @@ const Gen1 = () => {
       </HeaderGen1>
       <Searchbar onSearch={onSerchHandler} />
       {notFound ? (
-        <div>
-          <img src={sad} alt="pikachu sad" />
-        </div>
+         <SadContainer>
+            <SadText>This pokemon doesn't exist!! Try Again</SadText>
+         <SadImg src={sad} alt="Pikachu Sad" />
+       
+       </SadContainer>
       ) : (
         <Pokedex
           pokemons={pokemons}
@@ -101,21 +108,6 @@ const Gen1 = () => {
           totalPages={totalpages}
         />
       )}
-      <BackHome>
-        <Link to="/">
-          <button>
-            <img src={backball} alt="BackHome" />
-            <p>Back Home</p>
-          </button>
-        </Link>
-
-        <ScrollToTopButton onClick={scrollToTop}>
-          <button>
-            <img src={backball} alt="Back Top Page" />
-            <p>Back Top Page</p>
-          </button>
-        </ScrollToTopButton>
-      </BackHome>
     </Gen1Container>
   );
 };

@@ -6,9 +6,9 @@ import {
   SearchBarButton,
 } from "./styled";
 
-const Searchbar = (props) => {
+const Searchbar = ( {onSearch} ) => {
   const [search, setSearch] = useState("");
-  const { onSearch } = props
+  // const { onSearch } = props
 
   const onChangeHandler = (e) => {
     setSearch(e.target.value);

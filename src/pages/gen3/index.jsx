@@ -15,8 +15,7 @@ import Pokedex from "../../Components/pokedex";
 import { PokemonGeneration } from "../../utils/generation";
 import sad from "../../assets/sad.gif";
 
-const Gen3 = (props) => {
-  const { totalPages } = props;
+const Gen3 = ({ totalPages }) => {
   const [searchedPokemon, setSearchedPokemon] = useState(null);
   const [loading, setLoading] = useState(false);
   const [pokemons, setPokemons] = useState([]);
@@ -50,18 +49,20 @@ const Gen3 = (props) => {
         itensPerPage,
         itensPerPage * page
       );
-      const promises = data.results.map(async (pokemon) => {
-        return await getPokemonData(pokemon.url);
-      });
 
-      const results = await Promise.all(promises);
-      setPokemons(results);
-      setLoading(false);
-      setTotalPages(Math.ceil(151 / itensPerPage));
-    } catch (error) {
-      console.log("fetchPokemons error: ", error);
-    }
-  };
+   const results = await Promise.all(
+      data.results.map(async (pokemon) => {
+        return await getPokemonData(pokemon.url);
+      })
+    );
+
+    setPokemons(results);
+    setLoading(false);
+    setTotalPages(Math.ceil(151 / itensPerPage));
+  } catch (error) {
+    console.log("fetchPokemons error: ", error);
+  }
+};
 
   useEffect(() => {
     fetchPokemons();

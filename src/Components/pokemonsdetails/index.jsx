@@ -1,18 +1,18 @@
 import React from "react";
-import { Container, PokemonImageContainer, PokemonInfoContainer, PokemonImage } from "./styled";
+import {
+  Container,
+  PokemonImageContainer,
+  PokemonInfoContainer,
+  PokemonImage,
+} from "./styled";
 import ProgressBar from "../progressbar";
-import getTypeInfo from "../../utils/typecolors";
+import getTypeInfo from "../../utils/typeinfo";
 
-const PokemonDetails = (props) => {
-  const { pokemon } = props;
-
+const PokemonDetails = ({ pokemon }) => {
   return (
     <Container>
       <PokemonImageContainer>
-        <PokemonImage
-          alt={pokemon.name}
-          src={pokemon.sprites.front_default}
-        />
+        <PokemonImage alt={pokemon.name} src={pokemon.sprites.front_default} />
       </PokemonImageContainer>
       <PokemonInfoContainer>
         <h1>

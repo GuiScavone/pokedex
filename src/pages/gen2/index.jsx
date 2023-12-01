@@ -15,8 +15,7 @@ import Pokedex from "../../Components/pokedex";
 import { PokemonGeneration } from "../../utils/generation";
 import sad from "../../assets/sad.gif";
 
-const Gen2 = (props) => {
-  const { totalPages } = props;
+const Gen2 = ({ totalPages }) => {
   const [searchedPokemon, setSearchedPokemon] = useState(null);
   const [loading, setLoading] = useState(false);
   const [pokemons, setPokemons] = useState([]);

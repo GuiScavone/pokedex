@@ -21,7 +21,6 @@ import {
 import Modal from "../modal";
 import PokemonDetails from "../pokemonsdetails";
 import typecolors from "../typecolors";
-import getTypeInfo from "../../utils/typecolors";
 
 const generateGradientColors = (types) => {
   const color1 = typecolors[types[0]] || "rgba(0, 0, 0, 0.75)";
@@ -37,9 +36,8 @@ const convertWeightToKilograms = (weight) => {
   return (weight / 10).toFixed(1);
 };
 
-const Pokemon = (props) => {
+const PokemonCard = ({ pokemon }) => {
   const [openModal, setOpenModal] = useState(false);
-  const { pokemon } = props;
   const gradientColors = generateGradientColors(
     pokemon.types.map((type) => type.type.name)
   );
@@ -47,14 +45,13 @@ const Pokemon = (props) => {
   return (
     <PokemonCardContainer>
       <PokemonImageContainer>
-        <PokemonImage alt={pokemon.name} src={pokemon.sprites.front_default} />
+        <PokemonImage src={pokemon.sprites.front_default} alt={pokemon.name} />
       </PokemonImageContainer>
       <CardBody gradientColors={gradientColors}>
         <CardTop>
           <PokemonName>{pokemon.name}</PokemonName>
           <PokemonId>#{pokemon.id}</PokemonId>
         </CardTop>
-
         <CardBottom>
           <PokemonType>
             {pokemon.types.map((type, index) => (
@@ -79,9 +76,7 @@ const Pokemon = (props) => {
             </StatContainer>
           </CardAbout>
         </CardBottom>
-
         <Button onClick={() => setOpenModal(true)}>More Info</Button>
-
         <Modal isOpen={openModal} setModalOpen={() => setOpenModal(false)}>
           <PokemonDetails pokemon={pokemon} />
         </Modal>
@@ -90,4 +85,4 @@ const Pokemon = (props) => {
   );
 };
 
-export default Pokemon;
+export default PokemonCard;

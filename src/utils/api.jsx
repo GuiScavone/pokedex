@@ -13,26 +13,26 @@ export const searchPokemon = async (pokemon) => {
 }
 export const getPokemons = async (generation, itensPerPage = 151, offset = 0) => {
     try {
-        console.log(generation, offset)
         let start, end;
 
         if (generation === "first") {
             start = 1;
             end = 151;
-            if (offset + 16 > end) {
-                itensPerPage = 6
-            }
+            // if (offset + 16 > end ) {
+            //     itensPerPage = 5
+            // }
+            
         } else if (generation === "second") {
             start = 152;
             end = 251;
-            if (offset + 16 > end) {
-                itensPerPage = 5
-            }
+            // if (offset > 16) {
+            //     itensPerPage = 4
+            // }
         } else if (generation === "third") {
             start = 252;
             end = 386;
-        }  if (offset + 16 > end) {
-            itensPerPage = 8
+        // }  if (offset > 16) {
+        //     itensPerPage = 8
         }
 
         let url = `https://pokeapi.co/api/v2/pokemon?limit=${itensPerPage}&offset=${offset}`;
@@ -42,9 +42,9 @@ export const getPokemons = async (generation, itensPerPage = 151, offset = 0) =>
         } else if (generation === PokemonGeneration.Second) {
             url = `https://pokeapi.co/api/v2/pokemon?limit=${itensPerPage}&offset=${offset + 151}`;
         } else if (generation === PokemonGeneration.Third) {
-            url = `https://pokeapi.co/api/v2/pokemon?limit=${itensPerPage}&offset=${offset + 251}`;
+            url = `https://pokeapi.co/api/v2/pokemon?limit=${itensPerPage}&offset=${offset + 251 }`;
         }
-
+        
         const response = await axios.get(url);
         return response.data;
     } catch (error) {

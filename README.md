@@ -9,8 +9,8 @@ A ideia inicial do peojeto, foi criar uma pagina, com 3 botões, onde ao clicar 
 <h2>Desenvolvimento</h2>
 <p>Para execução do projeto tinhamos 3 semanas, tentei as dividir de forma a organizar e me gerenciar para tudo estar pronto no prazo!</p>
   1 semana 
-<p>[x] - Design (Pesquisa, ideias, desenhos, Figma).</p>
+<p>[X] - Design (Pesquisa, ideias, desenhos, Figma).</p>
   2 semana
-<p>[ ] - Desenvolvimento do código, design das paginas.</p>
+<p>[X] - Desenvolvimento do código, design das paginas.</p>
   3 semana
-<p>[ ] - Finalização do código, verificação de erros, detalhes do design.</p>
+<p>[X] - Finalização do código, verificação de erros, detalhes do design.</p>

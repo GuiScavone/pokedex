@@ -78,7 +78,7 @@ export const TypeImage = styled.div`
 display: flex;
 justify-items: center;
   background-image: url(${(props) => props.image});
-  width: 30px;
+  /* width: 30px; */
   height: 12px;
   margin-right: 4px;
   
@@ -89,15 +89,17 @@ export const PokemonTypeText = styled.div`
   justify-content: center;
   background: ${(props) => typecolors[props.type]};
   border-radius: 30px;
-  padding: 4px 8px;
+  padding: 4px 15px;
   margin: 8px;
   color: #fff;
   font-weight: bold;
+  text-align: center;
   `;
 
 export const CardAbout = styled.div`
   border-radius: 30px;
   padding: 4px 8px;
+  padding-bottom: 15px;
   margin: 4px;
   color: #fff;
   align-content: center;
@@ -115,28 +117,38 @@ export const StatContainer = styled.div`
 `;
 
 export const Label = styled.span`
-  font-size: 1rem;
+ display: flex;
+ font-size: 1rem;
   color: #ffffff;
   margin-right: 5px;
   font-weight: bold;
 `;
 
+export const ValueCard = styled.div`
+  padding-top: 10px;
+
+
+
+`;
 export const ValueBox = styled.span`
-  background-color: #ffffff; // Cor de fundo para a caixa de valor
+  background-color: #ffffff;
   color: #959595;
   padding: 5px;
-  border-radius: 8px;
+  border-radius: 20px;
+  font-size: small;
 `;
 
 export const Button = styled.button`
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 12.5px 30px;
   border: 0;
   border-radius: 100px;
   background-color: #d6dad6;
   color: #7e7a7a;
   font-weight: Bold;
+  margin: auto;
 
   transition: all 0.5s;
   -webkit-transition: all 0.5s;

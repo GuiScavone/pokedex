@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import backverde from "../../assets/backgroundVerde.png";
+import backblack from "../../assets/backgroundblack.png";
 
 export const Gen1Container = styled.div`
-  background-image: url(${backverde});
+  background-image: url(${backblack});
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
@@ -23,66 +23,22 @@ export const HeaderGen1 = styled.div`
   padding-bottom: 25px;
 `;
 
-export const BackHome = styled.div`
+export const SadContainer = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 50px 50px 50px 50px;
-
-  button {
-    background: transparent;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-
-    &:hover p {
-      opacity: 1; 
-    }
-  }
-
-  img {
-    width: 30px;
-    height: 30px;
-    margin-right: 5px;
-  }
-
-  p {
-    margin: 0;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
+  justify-content: flex-start;  // Ajuste para alinhar ao topo
+  height: 100vh;
+  margin-top: 50px;  // Ajuste conforme necessário
 `;
 
-export const ScrollToTopButton = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 50px 50px 50px 50px;
+export const SadText = styled.div`
+  margin-bottom: 20px;
+  text-align: center;
+  color: white;
+`;
 
-  button {
-    background: transparent;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-
-    &:hover p {
-      opacity: 1;
-    }
-  }
-
-  img {
-    width: 30px;
-    height: 30px;
-    margin-right: 5px;
-  }
-
-  p {
-    margin: 0;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
+export const SadImg = styled.img`
+  width: 250px;
+  height: auto;
 `;

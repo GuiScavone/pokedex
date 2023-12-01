@@ -9,6 +9,9 @@ import {
   ButtonContainer,
   ButtonPage,
   ImgGen,
+  BoxColor1,
+  BoxColor2,
+  BoxColor3,
 } from "./styled";
 import { Link } from "react-router-dom";
 import imgGen1 from "../../assets/gen1plus.png";
@@ -18,38 +21,38 @@ import imgGen3 from "../../assets/gen3plus.png";
 const Home = () => {
   return (
     <HomeContainer>
-      <Link to="/home">
-        <Logo src={logo} alt="Logo Pokemon" />
-      </Link>
+      <Logo src={logo} alt="Logo Pokemon" />
       <MainImage src={ash} alt="AshCation" />
       <ButtonContainer>
-        <div>
+        <BoxColor1>
           <div>
-          <ImgGen src={imgGen1} alt="Pokemons generarion 1" />
+            <ImgGen src={imgGen1} alt="Pokemons generarion 1" />
           </div>
           <Link to="/gen1">
             <ButtonPage>Generation 1</ButtonPage>
           </Link>
-        </div>
-        <div>
+        </BoxColor1>
+
+        <BoxColor2>
           <div>
-          <ImgGen src={imgGen2} alt="Pokemons generarion 2" />
+            <ImgGen src={imgGen2} alt="Pokemons generarion 2" />
           </div>
           <Link to="/gen2">
             <ButtonPage>Generation 2</ButtonPage>
           </Link>
-        </div>
-        <div>
+        </BoxColor2>
+
+        <BoxColor3>
           <div>
-          <ImgGen src={imgGen3} alt="Pokemons generarion 2" />
+            <ImgGen src={imgGen3} alt="Pokemons generarion 2" />
           </div>
           <Link to="/gen3">
             <ButtonPage>Generation 3</ButtonPage>
           </Link>
-        </div>
+        </BoxColor3>
       </ButtonContainer>
     </HomeContainer>
   );
-}
+};
 
 export default Home;

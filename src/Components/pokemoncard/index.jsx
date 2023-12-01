@@ -16,6 +16,7 @@ import {
   StatContainer,
   Label,
   ValueBox,
+  ValueCard,
 } from "./styled";
 import Modal from "../modal";
 import PokemonDetails from "../pokemonsdetails";
@@ -66,11 +67,15 @@ const Pokemon = (props) => {
           <CardAbout>
             <StatContainer>
               <Label>Height</Label>
+              <ValueCard>
               <ValueBox>{convertHeightToMeters(pokemon.height)} M</ValueBox>
+              </ValueCard>
             </StatContainer>
             <StatContainer>
               <Label>Weight</Label>
+              <ValueCard>
               <ValueBox>{convertWeightToKilograms(pokemon.weight)} KG</ValueBox>
+              </ValueCard>
             </StatContainer>
           </CardAbout>
         </CardBottom>

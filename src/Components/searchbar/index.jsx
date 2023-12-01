@@ -32,12 +32,12 @@ const Searchbar = (props) => {
       <SearchBar>
         <SearchInput
           type="text"
-          placeholder="Buscar pokemon"
+          placeholder="Search Pokemon"
           onChange={onChangeHandler}
           onKeyDown={onEnterKeyDown}
         />
       </SearchBar>
-      <SearchBarButton onClick={onButtonClickHandler}>Buscar</SearchBarButton>
+      <SearchBarButton onClick={onButtonClickHandler}>Search</SearchBarButton>
     </SearchBarContainer>
   );
 };
